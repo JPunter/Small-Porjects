@@ -2,17 +2,10 @@ This repository will house any projects that I am developing to use as part of m
 
 Contents:
 
-### Home Manager ###
-    A small inventory management project to keep track of what food stuffs are kepy in the house to prevent doubling buying at the shops.
-    Will utilise a small sqlite3 database initially. Aim to integrate postgresql into it and make an executable project
-
-### Penryn Gymnastics database ###
-    An account management system to allow adminstration actions of various gymnasts, classes, staff, timetables etc.
+### Rental property web scraper ###
+    A web scraper that will store new rental listings in a csv file for viewing
 
 Future project ideas:
-
-### Rental property web scraper ###
-    A web scraper that will store new rental listings in a database for viewing in a tkinter ui (upgrade ui in future)
 
 ### Translate injector. ###
     Using google translate api for the translate function, have a toggle webapp system that allows the translated interpretation below each line (Or on hover) of text on a web page
@@ -24,3 +17,10 @@ Future project ideas:
     Database: Stores all staff data
     User input: Staff details
     Interface: Add staff, add time off, generate rota
+
+### Home Manager ###
+    A small inventory management project to keep track of what food stuffs are kepy in the house to prevent doubling buying at the shops.
+    Will utilise a small sqlite3 database initially. Aim to integrate postgresql into it and make an executable project
+
+### Penryn Gymnastics database ###
+    An account management system to allow adminstration actions of various gymnasts, classes, staff, timetables etc.
