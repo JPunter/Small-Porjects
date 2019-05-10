@@ -5,6 +5,9 @@ Contents:
 ### Rental property web scraper ###
     A web scraper that will store new rental listings in a csv file for viewing
 
+### Job seeker ###
+    Uses reed.co.uk's API to search for jobs and output to a postgresql database
+
 Future project ideas:
 
 ### Translate injector. ###
