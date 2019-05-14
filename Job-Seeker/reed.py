@@ -40,7 +40,7 @@ https://www.reed.co.uk/developers/Jobseeker
 import requests
 import json
 import pandas as pd
-
+from datetime import datetime
 
 class Reed():
     def __init__(self, key):
@@ -96,10 +96,18 @@ class Reed():
     def json_to_pd(self, data):
         return pd.DataFrame(data["results"])
 
-    def del_cols(self, data):
+    def clean_cols(self, data):
         del_cols = ["currency", "employerId",
                     "employerProfileId", "employerProfileName"]
         for col in del_cols:
             data = data.drop(col, 1)
-        #data = data.dropna(subset=['jobId']) # Removes any NoneType jobs. Jobs must have a jobId.
+        # Removes any NoneType jobs. Jobs must have a jobId.
+        data = data.dropna(subset=['jobId'])
         return data
+    
+    def recent_jobs(self, data):
+        recent_data = data
+        for index in data.itertuples():
+            if (datetime.today() - datetime.strptime(str(index[2]), '%d/%m/%Y')).days > 7:
+                recent_data = recent_data.drop(index[0])
+        return recent_data
