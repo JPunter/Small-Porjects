@@ -16,13 +16,15 @@ class PostGresTools:
         self.dbpass = password
 
         try:
-            self.engine = create_engine("postgresql+psycopg2://{0}:{1}@{2}:5432/{3}".format(dbuser,
-            dbpass,dbhost,dbname))
+            self.engine = create_engine("postgresql+psycopg2://{0}:{1}@{2}:5432/{3}".format(self.dbuser,
+            self.dbpass,self.dbhost,self.dbname))
+            print("Database engine established")
         except:
             print("Could not establish database engine")
         
         try:
             self.conn = self.engine.connect().connection
+            print("Database connection established")
         except:
             print("Could not establish database connection")
     
