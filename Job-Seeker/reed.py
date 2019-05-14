@@ -2,8 +2,7 @@
 This file is just for establishing what the Reed api will return when called. 
 Reed is a job search platform that offers a free developer API. I'll make use of that API for job hunting
 
-API key: 
-3dbd30fd-117e-42a5-ac4f-2f1908c082ed
+Haven't managed to find any documentation on API call limits, but have encountered a call refusal once during testing.
 
 Access format: https://www.reed.co.uk/api/{version number}/jobs/{Job Id} 
 e.g. https://www.reed.co.uk/api/1.0/jobs/132
@@ -33,6 +32,7 @@ API returns a list of dictionaries, one for each job. The returned job data is g
  'contractType': None,
  'jobDescription': None,
  'applicationCount': 0}
+
 Documentation
 https://www.reed.co.uk/developers/Jobseeker
 '''
@@ -46,8 +46,8 @@ class Reed():
     def __init__(self, key):
         self.key = key
         try:
-            requests.get("https://www.reed.co.uk/api/1.0/jobs/132", auth = (self.key,""))
-            print('API connection established')
+            requests.get("https://www.reed.co.uk/api/1.0/jobs/132", auth = (self.key,"")) #need to update test
+            print('\nAPI connection established\n')
         except:
             print("API connection not established, please provide a valid API key")
 

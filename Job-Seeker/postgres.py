@@ -4,6 +4,7 @@
 
 import psycopg2
 import pandas
+import sys
 from sqlalchemy import create_engine
 
 
@@ -20,16 +21,17 @@ class PostGresTools:
             self.dbpass,self.dbhost,self.dbname))
             print("Database engine established")
         except:
-            print("Could not establish database engine")
+            print("Could not establish database engine, exiting program.")
+            sys.exit()
         
         try:
             self.conn = self.engine.connect().connection
-            print("Database connection established")
+            print("Database connection established\n")
         except:
-            print("Could not establish database connection")
+            print("Could not establish database connection, exiting program.")
+            sys.exit()
+        
     
-    
-
     #writes to table within preconnected database
     def writeTable(self, data, table_name):
         try:
